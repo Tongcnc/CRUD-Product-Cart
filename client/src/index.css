@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .Input {
+    @apply text-base bg-white border-gray-400 border-2 rounded p-3 focus:outline-none focus:border-black w-80;
+  }
+  .Box-item {
+    @apply h-[450px] bg-white flex flex-col gap-2 w-80 p-4 shadow-lg rounded-xl;
+  }
+  .Btn {
+    @apply px-6 py-2 rounded-lg font-semibold text-lg;
+  }
+  .Btn-modal {
+    @apply bg-white px-10 py-2 rounded-lg font-semibold text-lg;
+  }
+}
