@@ -34,7 +34,7 @@ async function init() {
   app.get("/product", (req, res) => {
     let keywords = req.query.keywords;
 
-    if (keywords === undefined) {
+    if (!keywords) {
       return res.status(400).json({
         message:
           "Please send either keywords or code parameter in the URL endpoint",
@@ -44,8 +44,9 @@ async function init() {
     let sql = "SELECT * FROM `product` WHERE 1";
     let params = [];
 
-    if (keywords !== undefined) {
-      sql += " AND product LIKE ?";
+    if (keywords) {
+      sql += " AND (product LIKE ? OR code LIKE ?)";
+      params.push("%" + keywords.split(" ").join("%") + "%");
       params.push("%" + keywords.split(" ").join("%") + "%");
     }
 
