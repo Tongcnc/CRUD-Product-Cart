@@ -39,7 +39,7 @@ function CreateProductPage() {
     }
   };
 
-  // console.log(image);
+  console.log(image);
 
   return (
     <>

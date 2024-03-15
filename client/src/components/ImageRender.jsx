@@ -44,19 +44,15 @@ function ImageRendering(props) {
               className="w-[200px] h-[200px] rounded object-cover"
             />
           )}
-          {typeof props.image === "object" &&
-            Object.keys(props.image).map((avatarKey) => {
-              const file = props.image[avatarKey];
-              return (
-                <div key={avatarKey} className="image-preview-container">
-                  <img
-                    className="image-preview"
-                    src={URL.createObjectURL(file)}
-                    alt={file.name}
-                  />
-                </div>
-              );
-            })}
+          {props.image instanceof File && (
+            <div className="image-preview-container">
+              <img
+                className="image-preview"
+                src={URL.createObjectURL(props.image)}
+                alt={props.image.name}
+              />
+            </div>
+          )}
           <button
             className="flex items-center justify-center absolute -top-3 -right-2 rounded-full bg-white hover:bg-black"
             onClick={() => props.change(null)}

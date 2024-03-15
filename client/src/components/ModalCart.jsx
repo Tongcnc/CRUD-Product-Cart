@@ -89,7 +89,7 @@ function ModalCart({ product, setProduct }) {
 
       <div className="text-2xl font-bold mt-4 bg-black text-white p-6 w-full rounded-lg flex justify-between">
         <h2>Total Price</h2>
-        <h2>{totalPrice}$</h2>
+        <h2>{totalPrice}฿</h2>
       </div>
     </section>
   );
